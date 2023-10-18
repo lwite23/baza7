@@ -1,0 +1,31 @@
+﻿<Window x:Class="WpfApp2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp2"
+        mc:Ignorable="d"
+        Title="Главное окно" Height="600" Width="800">
+    <Grid Background="#FFCC99">
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="5"/>
+            <RowDefinition Height="85"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Image Grid.Row="1" Width="79" HorizontalAlignment="Left" Margin="10,0,0,0" Source="logo.png"/>
+        <TextBox  Width="208" FontSize="18" HorizontalAlignment="Left" Margin="414,22,0,38" TextWrapping="Wrap" Grid.Row="1" Visibility="Visible" Cursor="Hand"/>
+        <ComboBox HorizontalAlignment="Left" Grid.Row="1" VerticalAlignment="Top" Width="95" SelectionChanged="ComboBox_SelectionChanged" IsEditable="True" IsReadOnly="True" Text="Сортировка" Margin="677,50,0,0"/>
+        <ComboBox Background="#FFCC6600" Name="Фильтрация" HorizontalAlignment="Left" Margin="677,11,0,0" Grid.Row="1" VerticalAlignment="Top" Width="95" Text="Фильтрация" IsEditable="True" IsReadOnly="True" BorderBrush="#FFA73939">
+            <ComboBoxItem Content="Один слой"/>
+            <ComboBoxItem Content="Два слоя"/>
+            <ComboBoxItem Content="Три слоя"/>
+            <ComboBoxItem Content="Супер мягкая"/>
+            <ComboBoxItem Content="Детская"/>
+
+
+        </ComboBox>
+        <Frame Grid.Row="2" NavigationUIVisibility="Hidden" Name="MainFrame" Navigated="MainFrame_Navigated"/>
+        <TextBlock HorizontalAlignment="Left" Margin="375,22,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Height="25"><Run Language="ru-ru" Text="Поиск:"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="130,27,0,0" Grid.Row="1" TextWrapping="Wrap" Text="ООО&quot;Ароматный мир&quot;" VerticalAlignment="Top" FontSize="22"/>
+    </Grid>
+</Window>
