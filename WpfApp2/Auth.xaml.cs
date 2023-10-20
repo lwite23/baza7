@@ -23,7 +23,7 @@ namespace WpfApp2
         {
             InitializeComponent();
             AppFrame.frameAuth = AuthFrame;
-            AuthFrame.Navigate(new SignIn());
+            AuthFrame.Navigate(new SignUp());
         }
     }
 }

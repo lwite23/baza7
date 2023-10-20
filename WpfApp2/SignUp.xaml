@@ -4,8 +4,8 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:WpfApp2"
-      mc:Ignorable="d" d:DesignWidth="300"
-       Title="Login" Height="250">
+      mc:Ignorable="d" d:DesignWidth="400"
+       Title="Login" Height="300">
 
 
     <Grid Background="{DynamicResource ColorDop}">
@@ -19,7 +19,7 @@
         </Grid.ColumnDefinitions>
         <TextBlock Margin="10,0,0,208" FontSize="30" HorizontalAlignment="Left">Вход</TextBlock>
         <StackPanel Grid.Row="1" Orientation="Vertical" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <StackPanel RenderTransformOrigin="0.504,0.715">
+            <StackPanel RenderTransformOrigin="0.504,0.715" Width="179">
                 <TextBlock Margin="5,5,5,-5">Логин</TextBlock>
                 <TextBox Tag="Логин" Margin="10,0,10,10" x:Name="TBLogin" Height="23"/>
             </StackPanel>
@@ -31,9 +31,40 @@
             <StackPanel Orientation="Horizontal">
 
                 <Button Background="{DynamicResource AccentVnimanie}" Click="BtnSignIn_Click"
-                        Content="Войти" Height="40" Margin="10,10,10,2" RenderTransformOrigin="0.519,1.071"/>
-                <Button Background="{DynamicResource AccentVnimanie}" Click="BtnSignUp_Click" Height="40" Margin="10,10,10,2"
-                        Content="Зарегестрироваться"/>
+                        Content="Войти" Height="40" Width="160" Margin="10,10,10,2" RenderTransformOrigin="0.519,1.071"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+                <TextBox Height="40" Width="160" Margin="10" FontSize="24"  IsEnabled="False" FontFamily="Chiller" FontWeight="Bold" Name="CaptchaText" Text="ABCDef" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="#FF65778D" TextAlignment="Center" TextChanged="CaptchaText_TextChanged">
+                <TextBox.Background>
+                    <ImageBrush ImageSource="/CaptchaBack.png"/>
+                </TextBox.Background>
+                    <TextBox.Style>
+                        <Style  TargetType="{x:Type TextBox}" >
+                            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type TextBox}">
+                                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                                            <ScrollViewer x:Name="PART_ContentHost" Focusable="false" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </TextBox.Style>
+
+                </TextBox>
+
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal">
+
+                <Button  Name="ResetCaptchaButton"  Margin="10,0,0,0" Width="160" HorizontalContentAlignment="Center" Click="ResetCaptchaButton_Click" FontFamily="segoe ui" FontSize="13" FontWeight="Normal">
+                    <StackPanel>
+                        <Image Source="/Refresh.png" Stretch="Uniform" Height="30"/>
+                    </StackPanel>
+                </Button>
             </StackPanel>
         </StackPanel>
     </Grid>

@@ -176,6 +176,8 @@
       <DependentUpon>baza7.edmx</DependentUpon>
       <LastGenOutput>baza7.cs</LastGenOutput>
     </Content>
+    <Resource Include="Refresh.png" />
+    <Resource Include="CaptchaBack.png" />
     <Resource Include="icon.ico" />
   </ItemGroup>
   <ItemGroup>

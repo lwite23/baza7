@@ -6,13 +6,13 @@
         xmlns:local="clr-namespace:WpfApp2"
         Icon="icon.ico"
          mc:Ignorable="d"
-         Title="Вход/Регистрация" WindowStartupLocation="CenterScreen" Height="800" Width="1200" Background="LightBlue">
+         Title="Вход/Регистрация" WindowStartupLocation="CenterScreen" Height="320" Width="320" Background="LightBlue">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="130"/>
+
             <RowDefinition Height="*"/>
-            <RowDefinition Height="35"/>
+            
         </Grid.RowDefinitions>
-        <Frame Grid.Row="1" NavigationUIVisibility="Hidden" Name="AuthFrame"/>
+        <Frame Grid.Row="0" NavigationUIVisibility="Hidden" Name="AuthFrame"/>
     </Grid>
 </Window>
